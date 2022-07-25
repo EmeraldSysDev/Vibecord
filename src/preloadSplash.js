@@ -6,7 +6,7 @@ require('./ipc/renderer');
 require('module').Module.globalPaths.push(join(__dirname, 'fake_node_modules'));
 
 // Discord's preload
-const preload = ipcRenderer.sendSync('POWERCORD_GET_PRELOAD');
+const preload = ipcRenderer.sendSync('VIBECORD_GET_PRELOAD');
 if (preload) {
   require(preload);
 }
@@ -15,7 +15,7 @@ window.__SPLASH__ = true;
 
 // CSS Injection
 function init () {
-  document.body.classList.add('powercord');
+  document.body.classList.add('vibecord');
   const StyleManager = require('./Powercord/managers/styles');
   global.sm = new StyleManager();
   global.sm.loadThemes();

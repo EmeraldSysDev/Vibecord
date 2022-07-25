@@ -32,7 +32,7 @@ Module._resolveFilename = function (...args) {
 // Wrap some methods and expose some properties
 // --
 
-console.log('[Powercord] Loading Powercord');
+console.log('[Vibecord] Loading Vibecord');
 
 if (global.NEW_BACKEND) {
   Object.defineProperty(window, 'platform', { get: () => require('powercord/webpack').proxiedWindow.platform });
@@ -286,7 +286,7 @@ if (process.platform === 'darwin' && !process.env.PATH.includes('/usr/local/bin'
 }
 
 // Discord's preload
-const preload = ipcRenderer.sendSync('POWERCORD_GET_PRELOAD');
+const preload = ipcRenderer.sendSync('VIBECORD_GET_PRELOAD');
 if (preload) {
   require(preload);
 }
